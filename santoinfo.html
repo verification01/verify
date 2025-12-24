@@ -4,6 +4,68 @@
 <title>student information</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+.btn {
+      width: 140px;
+      height: 50px;
+      background: linear-gradient(to top, #00154c, #12376e, #23487f);
+      color: #fff;
+      border-radius: 50px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      position:absolute;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+	  margin-left:87%;
+    }
+
+    .btn span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    /* ডিফল্ট: শুধু "check balance" দেখাবে */
+    .btn-text-one {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+
+    /* ডিফল্ট: "360taka" পুরোপুরি লুকানো */
+    .btn-text-two {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    /* ক্লিক করলে (active) */
+    .btn.active .btn-text-one {
+      top: -30px;
+      opacity: 0;
+    }
+
+    .btn.active .btn-text-two {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+	@media(max-width:480px){
+	.btn{
+    margin-left:4px;
+	margin-top:4px;
+	width: 120px;
+    height: 30px;
+	}
+	}
+
+
 .name{
 text-align:center;
 }
@@ -45,7 +107,10 @@ width:auto;
 
 </head>
 <body>
-
+<button class="btn" id="balanceBtn">
+    <span class="btn-text-one">check balance</span>
+    <span class="btn-text-two">360taka</span>
+  </button><br>
 <div class="dv1">
 
     <div class="photo">
@@ -106,4 +171,18 @@ allow="autoplay">
 </iframe>
 </div>
 </body>
+<script>
+    const btn = document.getElementById('balanceBtn');
+
+    btn.addEventListener('click', function() {
+      // যদি ইতিমধ্যে active থাকে তাহলে দ্বিতীয়বার ক্লিকে কিছু না করা (অপশনাল)
+      if (btn.classList.contains('active')) return;
+
+      btn.classList.add('active');
+
+      setTimeout(() => {
+        btn.classList.remove('active');
+      }, 3000); // ৩ সেকেন্ড পর আবার ফিরে আসবে
+    });
+  </script>
 </html>
