@@ -5,6 +5,19 @@
 
 <style>
 
+import { Capacitor } from '@capacitor/core';
+
+// চেক করো প্ল্যাটফর্ম
+const platform = Capacitor.getPlatform();
+
+if (platform === 'web') {
+  // শুধু ব্রাউজারে দেখাও ডাউনলোড বাটন
+  document.getElementById('download-button').style.display = 'block';
+} else {
+  // অ্যাপে হাইড করো
+  document.getElementById('download-button').style.display = 'none';
+}
+
 /* From Uiverse.io by athulknr */ 
 /* size reduced from 6em to 4em */
 #theme-toggle-button {
@@ -192,12 +205,17 @@ z-index:-1;
 opacity: 1;
 transition: opacity 0.6s ease;
 }
-
+#download-button{
+	position:fixed;
+	z-index:1600;
+}
 </style>
 </head>
 
 <body>
-
+<button id="download-button" style="display: none;" onclick="window.location.href='path/to/your-app.apk'">
+  Click here to download mobile app
+</button>
 <!-- From Uiverse.io by athulknr --> 
 <label id="theme-toggle-button">
   <input id="toggle" type="checkbox" />
@@ -380,6 +398,7 @@ transition: opacity 0.6s ease;
 
 <img src="s4.jpg" class="b1" id="bg1">
 <img src="s5.jpg" class="b2" id="bg2">
+<script src="https://unpkg.com/@capacitor/core@latest/dist/capacitor.js"></script>
 <script>
 
 
@@ -444,6 +463,7 @@ toggle.addEventListener("change", () => {
 
 </body>
 </html>
+
 
 
 
