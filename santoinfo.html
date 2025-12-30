@@ -120,7 +120,7 @@ width:auto;
 <a href = "calculate.html" class = "calculate">calculate</a>
 <a href = "naruto.html" class = "icon"><img src = "icon1.png" style = "height:40px"></a>
 <body>
-<button class="btn" id="balanceBtn">
+<button class="btn" id="balanceBtn" onclick = "check()">
     <span class="btn-text-one">check balance</span>
     <span class="btn-text-two">56 SC</span>
   </button><br>
@@ -185,8 +185,17 @@ allow="autoplay">
 </div>
 </body>
 <script>
+	function check(){
+		while (true){
+		let ck = prompt("password protection");
+		if(ck=="santo5028") {
+			break;
+	}
+		else{
+			alert("incorrect password press ok and try again")
+		}}
     const btn = document.getElementById('balanceBtn');
-
+		
     btn.addEventListener('click', function() {
       
       if (btn.classList.contains('active')) return;
@@ -199,6 +208,7 @@ allow="autoplay">
     });
   </script>
 </html>
+
 
 
 
