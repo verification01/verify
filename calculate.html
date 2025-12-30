@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Money Counting</title>
+  </head>
+  <style>
+    body{
+      background:#ccffff;
+    }
+    .test{
+      text-align:center;
+      height:500;
+      width:200px;
+      padding:5px;
+      border:1px solid black;
+      background:#ccff99;
+    }
+    .result{
+      text-align: center;
+      border : 1px solid black;
+      height:35px;
+      width:100px;
+      background:#ff9933;
+      
+    }
+    #inpt{
+      height:35px;
+      width:150px;
+      background:lightblue;
+    }
+  </style>
+  <body>
+      <div class = "test">
+      <input type="number" id="inpt"><br><br>
+
+      <button onclick="count1()">Taka to SC</button>
+      <button onclick="count2()">SC to Taka</button><br><br>
+      <div class = "result">
+      <p id="display">Result</p>
+      </div>
+      </div>
+      <script>
+        function count1() {
+          const inpt = parseFloat(document.getElementById("inpt").value);
+          const dsply = document.getElementById("display");
+
+          if (isNaN(inpt)) {
+            dsply.innerText = "the input is empty";
+            return;
+          }
+
+          let amount = inpt / 3.75;
+          dsply.innerText = amount.toFixed(2);
+        }
+
+        function count2() {
+          const inpt = parseFloat(document.getElementById("inpt").value);
+          const dsply = document.getElementById("display");
+
+          if (isNaN(inpt)) {
+            dsply.innerText = "the input is empty";
+            return;
+          }
+
+          let amount = inpt * 3.75;
+          dsply.innerText = amount.toFixed(2);
+        }
+      </script>
+
+  </body>
+</html>
