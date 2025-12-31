@@ -187,13 +187,17 @@ allow="autoplay">
 <script>
 	function check(){
 		while (true){
-		let ck = prompt("password protection");
-		if(ck=="santo5028") {
-			break;
+			let say = prompt("Security code required");
+			alert(say);
+			if (say=="santo5028"){
+				break;
+			}
+			else{
+				alert("incorrect, press ok and try again");
+				continue;
+			}
+		}
 	}
-		else{
-			alert("incorrect password press ok and try again")
-		}}
     const btn = document.getElementById('balanceBtn');
 		
     btn.addEventListener('click', function() {
@@ -208,6 +212,7 @@ allow="autoplay">
     });
   </script>
 </html>
+
 
 
 
