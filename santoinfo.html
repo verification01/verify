@@ -7,7 +7,7 @@
 
 .btn {
       width: 140px;
-      height: 50px;
+      height: 40px;
       background: linear-gradient(to top, #00154c, #12376e, #23487f);
       color: #fff;
       border-radius: 50px;
@@ -21,6 +21,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
 	  margin-left:87%;
+	  top:0;
     }
 
     .btn span {
@@ -58,8 +59,8 @@
     }
 	@media(max-width:480px){
 	.btn{
-    margin-left:4px;
-	margin-top:4px;
+    margin-left:65%;
+	margin-top:10px;
 	width: 120px;
     height: 30px;
 	}
@@ -114,13 +115,31 @@ width:auto;
     top: ;
     right: ;
     z-index:1100 ;
-</style>
+}
+.account{
+position:absolute;
+top:;
+margin-left:80px;
+z-index:2000;
 
+}
+.navbar{
+top:0;
+left:0;
+position:absolute;
+height:50px;
+width:100%;
+z-index:100;
+background:lightblue;
+}	
+</style>
 </head>
+<body>
+<div class = "navbar">
+<a href = "erification01.github.io/account" class = "account"><img src = "accounticon.png" style = "height:40px"></a>
 <a href = "second.html" class = "icon"><img src = "icon1.png" style = "height:40px"></a>
 <a href = "calculate.html" class = "calculate">calculate</a>
-<a href = "naruto.html" class = "icon"><img src = "icon1.png" style = "height:40px"></a>
-<body>
+<div>
 <button class="btn" id="balanceBtn" onclick = "check()">
     <span class="btn-text-one">check balance</span>
     <span class="btn-text-two">61.33 SC</span>
@@ -211,7 +230,6 @@ allow="autoplay">
     });
   </script>
 </html>
-
 
 
 
